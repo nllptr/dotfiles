@@ -16,8 +16,6 @@ TODO
 - Install plugins with `<prefix> + I`
 
 ## Neovim
-TODO
-- Install plugins with Lazy. `:Lazy` -> `I`
-- Install language servers with Mason. `:Mason`
+- Install plugins with `:Lazy`.
+- Install language servers with `:Mason`.
 
-test
