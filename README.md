@@ -8,7 +8,7 @@ This repository contains configuration files for various applications.
 
 # Applications
 
-## Bash
+## Zsh / Oh-My-Zsh
 TODO
 
 ## Tmux
