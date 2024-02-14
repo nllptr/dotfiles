@@ -1,0 +1,13 @@
+*
+!.gitignore
+!README.md
+!.bashrc
+
+!/.config
+/.config/*
+!/.config/alacritty
+!/.config/alacritty/*
+!/.config/nvim
+!/.config/nvim/*
+!/.config/tmux
+!/.config/tmux/*

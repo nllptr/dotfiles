@@ -19,3 +19,5 @@ TODO
 TODO
 - Install plugins with Lazy. `:Lazy` -> `I`
 - Install language servers with Mason. `:Mason`
+
+test

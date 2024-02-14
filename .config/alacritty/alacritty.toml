@@ -1,0 +1,18 @@
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+#[shell]
+#shell = "/bin/bash"
+
+[window]
+decorations = "None"
+
+[window.padding]
+x = 5
+y = 5
+
+[font]
+size = 14
+
+[font.normal]
+family = "FiraMono Nerd Font"
