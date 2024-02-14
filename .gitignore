@@ -6,8 +6,8 @@
 !/.config
 /.config/*
 !/.config/alacritty
-!/.config/alacritty/*
+!/.config/alacritty/**
 !/.config/nvim
-!/.config/nvim/*
+!/.config/nvim/**
 !/.config/tmux
-!/.config/tmux/*
+!/.config/tmux/tmux.conf

@@ -8,12 +8,20 @@ This repository contains configuration files for various applications.
 
 # Applications
 
+## Platform specific
+
+### MacOS
+
+- Brew (package management)
+- Rectangle (window management)
+
 ## Zsh / Oh-My-Zsh
 TODO
 
 ## Tmux
 TODO
-- Install plugins with `<prefix> + I`
+- Install TPM.
+- Install plugins with `<prefix> + I`.
 
 ## Neovim
 - Install plugins with `:Lazy`.
