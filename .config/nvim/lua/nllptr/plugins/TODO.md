@@ -10,6 +10,5 @@ harpoon.lua
 linting.lua
 lualine.lua
 nvim-treesitter-text-objects.lua
-telescope.lua
 vim-maximizer.lua
 which-key.lua
