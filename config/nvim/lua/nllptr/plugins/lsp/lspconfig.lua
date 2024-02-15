@@ -63,6 +63,8 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
+    lspconfig.bashls.setup{}
+
     lspconfig.elixirls.setup({
       cmd = { vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/language-server.sh" }
     })

@@ -2,6 +2,14 @@
 
 This repository contains configuration files for various applications.
 
+## TODO
+
+- Improve install script.
+  - Add flag or other script that just reloads config.
+  - Add feature to just reload configs for a particular application.
+- Clean up .zshrc and add it to repo.
+  - Common (non-sensitive) stuff could be kept in the repo, and the more sensitive data is added manually.
+
 ## Installation
 1. Clone the repository
 2. From the repository root, run `./install.sh`. You might need `chmod +x install.sh` to make it executable.
