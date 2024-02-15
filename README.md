@@ -3,8 +3,10 @@
 This repository contains configuration files for various applications.
 
 ## Installation
-1. Clone the repository in to your home (`~`) directory.
-2. Install the applications you wish to use. See directions below for details on each application that is configured by these dotfiles.
+1. Clone the repository
+2. From the repository root, run `./install.sh`. You might need `chmod +x install.sh` to make it executable.
+   Note: This script will not make any backups of previous configs.
+3. Install the applications you wish to use. See directions below for details on each application that is configured by these dotfiles.
 
 # Applications
 
