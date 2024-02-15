@@ -17,6 +17,9 @@ This repository contains configuration files for various applications.
 
 ## Zsh / Oh-My-Zsh
 TODO
+- Install Zsh
+- Install Oh-My-Zsh
+- Install powerlevel10k
 
 ## Tmux
 TODO
