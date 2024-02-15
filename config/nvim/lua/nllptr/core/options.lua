@@ -13,6 +13,7 @@ opt.smartcase = true -- if mixed case is detected, use case-sensitive
 
 -- Appearance
 opt.number = true
+opt.relativenumber = true
 opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark"
