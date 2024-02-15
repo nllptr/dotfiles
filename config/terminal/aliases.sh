@@ -6,7 +6,7 @@ alias dot-refresh="$DOTFILES_REPO_DIR/refresh.sh"
 alias dot-repo="cd $DOTFILES_REPO_DIR"
 
 # Obsidian
-alias obs="nvim $OBSIDIAN_VAULT_DIR"
+alias obs="nvim \"$OBSIDIAN_VAULT_DIR\""
 alias note="new_note"
 
 # Completions

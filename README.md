@@ -12,9 +12,14 @@ This repository contains configuration files for various applications.
 
 ## Installation
 1. Clone the repository
-2. From the repository root, run `./install.sh`. You might need `chmod +x install.sh` to make it executable.
-   Note: This script will not make any backups of previous configs.
-3. Install the applications you wish to use. See directions below for details on each application that is configured by these dotfiles.
+2. Update your `.zshrc` to contain the following:
+  1. `export DOTFILES_REPO_DIR=~/code/other/dotfiles` (the path to your cloned repo)
+  2. `export OBSIDIAN_VAULT_DIR=~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Obsidian\ Vault` (the path to your Obsidian vault. Note that spaces in the path need to be escaped with `\`)
+  3. `source ~/.config/terminal/aliases.sh`
+  4. `source ~/.config/terminal/functions.sh`
+3. Restart your shell.
+4. Run `dot-refresh`. If it fails, you probably need to run `chmod +x refresh.sh` from the repo root.
+5. Install the applications you wish to use. See directions below for details on each application that is configured by these dotfiles.
 
 # Applications
 
