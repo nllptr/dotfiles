@@ -23,6 +23,7 @@ return {
         "elixirls",
         "jdtls",
         "lua_ls",
+        "rust_analyzer",
       },
       automatic_installation = true,
     })

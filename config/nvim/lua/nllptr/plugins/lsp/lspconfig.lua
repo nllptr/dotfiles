@@ -66,8 +66,10 @@ return {
     lspconfig.bashls.setup{}
 
     lspconfig.elixirls.setup({
-      cmd = { vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/language-server.sh" }
+      cmd = { vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/language_server.sh" }
     })
+
+    lspconfig.rust_analyzer.setup({})
 
     lspconfig.jdtls.setup({
       capabilities = capabilities,

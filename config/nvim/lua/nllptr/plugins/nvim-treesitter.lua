@@ -14,6 +14,7 @@ return {
           enable = true,
         },
         ensure_installed = {
+          "csv",
           "json",
           "yaml",
           "html",
@@ -26,6 +27,7 @@ return {
           "gitignore",
           "elixir",
           "query",
+          "rust",
         },
         incremental_selection = {
           enable = true,
