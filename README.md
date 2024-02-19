@@ -2,6 +2,9 @@
 
 This repository contains configuration files for various applications.
 
+This repo has been a super helpful inspiration:
+https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim
+
 ## TODO
 
 - Improve install script.
