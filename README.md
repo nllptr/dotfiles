@@ -38,10 +38,10 @@ https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim
 - On MacOS, you need to grant Alacritty access to the iCloud drive. Useful if you, for example,
   have your Obsidian vault located there.
 
-## Zsh / Oh-My-Zsh
+## Zsh
 - Install Zsh
-- Install Oh-My-Zsh
-- Install powerlevel10k
+
+## Starship prompt
 
 ## Tmux
 - Install TPM.
