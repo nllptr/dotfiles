@@ -1,5 +1,6 @@
 # General
-alias vim=nvim
+alias vim="nvim"
+alias ll="ls -l"
 
 # Dotfiles
 alias dot-repo="cd $DOTFILES_REPO_DIR"
