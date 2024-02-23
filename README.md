@@ -9,6 +9,7 @@ https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim
 
 - Source PATH from somewhere else.
   - Needs platform-specific or machine-specific functionality.
+- Write more help functions.
 
 
 ## Installation
@@ -45,3 +46,5 @@ https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim
 - Install plugins with `:Lazy`.
 - Install language servers with `:Mason`.
 
+# Getting help
+- `help_fzf` will print a useful summary for fzf.

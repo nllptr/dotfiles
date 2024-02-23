@@ -9,6 +9,8 @@ export OBSIDIAN_VAULT_DIR=~/Library/Mobile\ Documents/iCloud~md~obsidian/Documen
 source ~/.config/terminal/aliases.sh
 source ~/.config/terminal/functions.sh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
