@@ -10,8 +10,11 @@ alias obs="nvim \"$OBSIDIAN_VAULT_DIR\""
 alias note="new_note"
 
 # Git
+alias gb="git branch"
 alias gst="git status"
 alias glg="git log"
+alias gco="git checkout"
+alias ggraph="git log --all --decorate --oneline --graph"
 
 # Completions (use these aliases to activate completions)
 alias init-nerdctl="source <(nerdctl completion bash)"
