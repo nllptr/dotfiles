@@ -1,5 +1,13 @@
 eval "$(starship init zsh)"
 
+fpath=(~/.config/terminal/zsh $fpath)
+
+# Completions
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
+zstyle ':completion:*:*:git:*' script ~/.config/terminal/git-completion.bash
+
 # Subject to change in on other machines
 export PATH=$HOME/Library/Python/3.8/bin:$HOME/Library/Python/3.8/bin:$HOME/bin:/usr/local/bin:/Applications/IntelliJ\ IDEA.app/Contents/MacOS:$PATH:$HOME/.asdf/installs/rust/1.71.1/bin
 

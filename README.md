@@ -7,6 +7,7 @@ https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim
 
 ## TODO
 
+- Set K9S_CONFIG_DIR to .config and add config files to stow
 - Source PATH from somewhere else.
   - Needs platform-specific or machine-specific functionality.
 - Write more help functions.
