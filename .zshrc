@@ -4,6 +4,7 @@ fpath=(~/.config/terminal/zsh $fpath)
 
 # Completions
 autoload -Uz compinit && compinit
+zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 zstyle ':completion:*:*:git:*' script ~/.config/terminal/git-completion.bash
