@@ -49,3 +49,13 @@ https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim
 
 # Getting help
 - `help_fzf` will print a useful summary for fzf.
+
+# Some (n)vim reminders
+
+## Rename variable
+1. Put cursor on variable.
+2. `*` will search for the next occurrence.
+3. `ciw` (change inner word), type the new name and finish with Escape.
+4. `n` to go to the next occurrence.
+5. `.` to repeat the change.
+6. Repeat until done.

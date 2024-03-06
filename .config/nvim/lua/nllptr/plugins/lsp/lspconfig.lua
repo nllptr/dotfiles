@@ -69,6 +69,8 @@ return {
       cmd = { vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/language_server.sh" }
     })
 
+    lspconfig.gopls.setup{}
+
     lspconfig.rust_analyzer.setup({})
 
     lspconfig.jdtls.setup({
