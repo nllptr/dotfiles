@@ -10,7 +10,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*:*:git:*' script ~/.config/terminal/git-completion.bash
 
 # Subject to change in on other machines
-export PATH=$HOME/Library/Python/3.8/bin:$HOME/Library/Python/3.8/bin:$HOME/bin:/usr/local/bin:/Applications/IntelliJ\ IDEA.app/Contents/MacOS:$PATH:$HOME/.asdf/installs/rust/1.71.1/bin
+export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/Applications/IntelliJ\ IDEA.app/Contents/MacOS:$PATH
 export JDTLS_JVM_ARGS="-javaagent:$HOME/Jars/lombok.jar"
 
 export DOTFILES_REPO_DIR=~/dotfiles
@@ -24,3 +24,6 @@ source ~/.config/terminal/functions.sh
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Created by `pipx` on 2024-03-15 21:19:54
+export PATH="$PATH:/Users/simonwessel/.local/bin"

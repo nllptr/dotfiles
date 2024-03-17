@@ -8,6 +8,6 @@ return {
     })
 
     local keymap = vim.keymap
-    keymap.set("n", "<leader>gb", "<cmd>ToggleBlame<CR>", { desc = "Toggle git blame" })
+    keymap.set("n", "<leader>gb", "<cmd>ToggleBlame virtual<CR>", { desc = "Toggle git blame" })
   end
 }
