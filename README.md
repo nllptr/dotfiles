@@ -22,7 +22,7 @@ https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim
 
 ## Useful
 
-Start `nvim` and run `:healthcheck` to get a useful report.
+Start `nvim` and run `:checkhealth` to get a useful report.
 
 # Applications
 
