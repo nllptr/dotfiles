@@ -20,6 +20,10 @@ https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim
 4. Install the applications you wish to use. See directions below for details on each application that is configured by these dotfiles.
 5. Restart shell.
 
+## Useful
+
+Start `nvim` and run `:healthcheck` to get a useful report.
+
 # Applications
 
 ## Platform specific
