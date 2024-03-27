@@ -27,3 +27,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Created by `pipx` on 2024-03-15 21:19:54
 export PATH="$PATH:/Users/simonwessel/.local/bin"
+. "$HOME/.cargo/env"
