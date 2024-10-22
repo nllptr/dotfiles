@@ -14,7 +14,7 @@ export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/Applications/IntelliJ\ ID
 export JDTLS_JVM_ARGS="-javaagent:$HOME/Jars/lombok.jar"
 
 export DOTFILES_REPO_DIR=~/dotfiles
-export OBSIDIAN_VAULT_DIR=~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Obsidian\ Vault
+export NOTES_DIR=$HOME/Documents/notes
 
 source ~/.config/terminal/aliases.sh
 source ~/.config/terminal/functions.sh
@@ -29,6 +29,3 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PATH="$PATH:/Users/simonwessel/.local/bin"
 . "$HOME/.cargo/env"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

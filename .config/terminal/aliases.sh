@@ -6,7 +6,11 @@ alias ll="ls -l"
 alias dot-repo="cd $DOTFILES_REPO_DIR"
 
 # Obsidian
-alias obs="nvim \"$OBSIDIAN_VAULT_DIR\""
+#alias obs="nvim \"$OBSIDIAN_VAULT_DIR\""
+#alias note="new_note"
+
+# Notes
+alias notes="nvim \"$NOTES_DIR\""
 alias note="new_note"
 
 # Git
