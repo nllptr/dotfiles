@@ -23,3 +23,9 @@ alias ggraph="git log --all --decorate --oneline --graph"
 # Completions (use these aliases to activate completions)
 alias init-nerdctl="source <(nerdctl completion bash)"
 alias init-kubectl="source <(kubectl completion zsh)"
+
+# Db connections
+alias db-refill-tststg="podman run -it --rm mariadb mariadb --host siab01tstdb01.siab01.com --skip-ssl --user \"SIAB01\siwe001\" --password"
+alias db-prddb01="podman run -it --rm mariadb mariadb --host siab01prddb01.siab01.com --skip-ssl --user \"SIAB01\siwe001\" --password"
+alias db-prddbrefill01="podman run -it --rm mariadb mariadb --host prddbrefill01.siab01.com --skip-ssl --user \"SIAB01\siwe001\" --password"
+
