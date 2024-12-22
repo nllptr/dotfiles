@@ -10,7 +10,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*:*:git:*' script ~/.config/terminal/git-completion.bash
 
 # Subject to change in on other machines
-export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/Applications/IntelliJ\ IDEA.app/Contents/MacOS:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/Applications/IntelliJ\ IDEA\ CE.app/Contents/MacOS:$PATH
 export JDTLS_JVM_ARGS="-javaagent:$HOME/Jars/lombok.jar"
 
 export DOTFILES_REPO_DIR=~/dotfiles
