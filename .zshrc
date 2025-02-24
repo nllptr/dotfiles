@@ -10,7 +10,9 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*:*:git:*' script ~/.config/terminal/git-completion.bash
 
 # Subject to change in on other machines
-export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/Applications/IntelliJ\ IDEA\ CE.app/Contents/MacOS:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/Applications/IntelliJ\ IDEA.app/Contents/MacOS:$PATH
+export PATH=$HOME/.sdkman/candidates/maven/3.9.9/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
 export JDTLS_JVM_ARGS="-javaagent:$HOME/Jars/lombok.jar"
 
 export DOTFILES_REPO_DIR=~/dotfiles
@@ -28,4 +30,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Created by `pipx` on 2024-03-15 21:19:54
 export PATH="$PATH:/Users/simonwessel/.local/bin"
 . "$HOME/.cargo/env"
+
+eval "$(direnv hook zsh)"
 
