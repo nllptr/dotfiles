@@ -29,3 +29,5 @@ alias db-refill-tststg="podman run -it --rm mariadb mariadb --host siab01tstdb01
 alias db-prddb01="podman run -it --rm mariadb mariadb --host siab01prddb01.siab01.com --skip-ssl --user \"SIAB01\siwe001\" --password"
 alias db-prddbrefill01="podman run -it --rm mariadb mariadb --host prddbrefill01.siab01.com --skip-ssl --user \"SIAB01\siwe001\" --password"
 
+# Tmux
+alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
