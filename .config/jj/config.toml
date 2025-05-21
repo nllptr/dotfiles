@@ -1,0 +1,6 @@
+[ui]
+editor = "nvim"
+
+[user]
+name = "Simon Wessel"
+email = "simon.wessel@smartrefill.se"
