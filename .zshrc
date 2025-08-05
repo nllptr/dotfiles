@@ -21,7 +21,8 @@ export NOTES_DIR=$HOME/Documents/notes
 source ~/.config/terminal/aliases.sh
 source ~/.config/terminal/functions.sh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
