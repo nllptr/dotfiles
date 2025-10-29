@@ -1,5 +1,5 @@
 [ui]
-editor = "nvim"
+editor = "hx"
 
 [user]
 name = "Simon Wessel"
