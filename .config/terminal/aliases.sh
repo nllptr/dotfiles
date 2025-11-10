@@ -1,5 +1,5 @@
 # General
-alias vim="nvim"
+alias vim="hx"
 alias ll="ls -l"
 
 # Dotfiles
@@ -10,8 +10,8 @@ alias dot-repo="cd $DOTFILES_REPO_DIR"
 #alias note="new_note"
 
 # Notes
-alias notes="nvim \"$NOTES_DIR\""
-alias note="new_note"
+#alias notes="nvim \"$NOTES_DIR\""
+#alias note="new_note"
 
 # Git
 alias gb="git branch"
@@ -25,9 +25,9 @@ alias init-nerdctl="source <(nerdctl completion bash)"
 alias init-kubectl="source <(kubectl completion zsh)"
 
 # Db connections
-alias db-refill-tststg="podman run -it --rm mariadb mariadb --host siab01tstdb01.siab01.com --skip-ssl --user \"SIAB01\siwe001\" --password"
-alias db-prddb01="podman run -it --rm mariadb mariadb --host siab01prddb01.siab01.com --skip-ssl --user \"SIAB01\siwe001\" --password"
-alias db-prddbrefill01="podman run -it --rm mariadb mariadb --host prddbrefill01.siab01.com --skip-ssl --user \"SIAB01\siwe001\" --password"
+alias db-refill-tststg="docker run -it --rm mariadb mariadb --host siab01tstdb01.siab01.com --skip-ssl --user \"SIAB01\siwe001\" --password"
+alias db-prddb01="docker run -it --rm mariadb mariadb --host siab01prddb01.siab01.com --skip-ssl --user \"SIAB01\siwe001\" --password"
+alias db-prddbrefill01="docker run -it --rm mariadb mariadb --host prddbrefill01.siab01.com --skip-ssl --user \"SIAB01\siwe001\" --password"
 
 # Tmux
-alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
+#alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
