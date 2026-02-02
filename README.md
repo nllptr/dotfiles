@@ -2,17 +2,6 @@
 
 This repository contains configuration files for various applications.
 
-This repo has been a super helpful inspiration:
-https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim
-
-## TODO
-
-- Set K9S_CONFIG_DIR to .config and add config files to stow
-- Source PATH from somewhere else.
-  - Needs platform-specific or machine-specific functionality.
-- Write more help functions.
-
-
 ## Installation
 1. Install GNU Stow.
 2. Clone the repository into your home directory.
@@ -22,7 +11,16 @@ https://github.com/josean-dev/dev-environment-files/tree/main/.config/nvim
 
 ## Useful
 
-Start `nvim` and run `:checkhealth` to get a useful report.
+Helix configuration lives under `.config/helix`.
+Ghostty configuration lives under `.config/ghostty/config`.
+Shell helpers live under `.config/terminal/`.
+
+## Repo structure
+
+This repo is intended to be stowed from the repo root. Typical targets:
+- `.config/`
+- `.zshrc`
+- `.emacs`
 
 # Applications
 
@@ -33,7 +31,11 @@ Start `nvim` and run `:checkhealth` to get a useful report.
 - Brew (package management)
 - Rectangle (window management)
 
-## Alacritty
+## Ghostty
+
+Primary terminal emulator.
+
+## Alacritty (fallback)
 
 - On MacOS, you need to grant Alacritty access to the iCloud drive. Useful if you, for example,
   have your Obsidian vault located there.
@@ -43,23 +45,15 @@ Start `nvim` and run `:checkhealth` to get a useful report.
 
 ## Starship prompt
 
-## Tmux
-- Install TPM.
-- Start tmux and install plugins with `<prefix> + I`.
-
-## Neovim
-- Install plugins with `:Lazy`.
-- Install language servers with `:Mason`.
+## Helix
+- Install Helix (`hx`).
 
 # Getting help
 - `help_fzf` will print a useful summary for fzf.
 
-# Some (n)vim reminders
+# Prerequisites
 
-## Rename variable
-1. Put cursor on variable.
-2. `*` will search for the next occurrence.
-3. `ciw` (change inner word), type the new name and finish with Escape.
-4. `n` to go to the next occurrence.
-5. `.` to repeat the change.
-6. Repeat until done.
+- `fzf` (used by shell integrations and `help_fzf`)
+- `direnv` (shell hook in `.zshrc`)
+- `starship` (prompt in `.zshrc`)
+- `helix` (`hx`)
