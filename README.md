@@ -24,6 +24,15 @@ This repo is intended to be stowed from the repo root. Typical targets:
 
 # Applications
 
+## Primary
+
+- Ghostty (terminal emulator)
+- Helix (`hx`, editor)
+- Starship (prompt)
+- Zsh (shell)
+- Jujutsu (`jj`, VCS)
+- uv (Python tooling)
+
 ## Platform specific
 
 ### MacOS
@@ -31,22 +40,20 @@ This repo is intended to be stowed from the repo root. Typical targets:
 - Brew (package management)
 - Rectangle (window management)
 
-## Ghostty
+## Legacy / fallback
 
-Primary terminal emulator.
-
-## Alacritty (fallback)
+### Alacritty
 
 - On MacOS, you need to grant Alacritty access to the iCloud drive. Useful if you, for example,
   have your Obsidian vault located there.
 
-## Zsh
-- Install Zsh
+### Tmux
 
-## Starship prompt
+Deprecated, kept around for now.
 
-## Helix
-- Install Helix (`hx`).
+### Neovim
+
+Deprecated, kept around for now.
 
 # Getting help
 - `help_fzf` will print a useful summary for fzf.
