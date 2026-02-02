@@ -3,3 +3,5 @@ theme = "catppuccin_mocha"
 [editor]
 line-number = "relative"
 
+[editor.file-picker]
+hidden = false

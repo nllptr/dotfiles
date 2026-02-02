@@ -1,0 +1,3 @@
+[language-server.jdtls]
+command = "jdtls"
+args = ["--jvm-arg=-javaagent:/Users/siwe001/jars/lombok.jar"]
