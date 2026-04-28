@@ -1,4 +1,5 @@
 eval "$(starship init zsh)"
+eval "$(fnm env --use-on-cd)"
 
 fpath=(~/.config/terminal/zsh $fpath)
 
@@ -14,6 +15,8 @@ export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/Applications/IntelliJ\ ID
 export PATH=$HOME/.sdkman/candidates/maven/3.9.9/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 export JDTLS_JVM_ARGS="-javaagent:$HOME/Jars/lombok.jar"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator"
 
 export DOTFILES_REPO_DIR=~/dotfiles
 export NOTES_DIR=$HOME/Documents/notes
