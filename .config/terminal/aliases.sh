@@ -31,3 +31,6 @@ alias db-prddbrefill01="docker run -it --rm mariadb mariadb --host prddbrefill01
 
 # Tmux
 #alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
+
+# Personal cursor environment
+alias cursor-personal='cursor --user-data-dir="$HOME/.cursor-personal"'

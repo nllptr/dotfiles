@@ -5,3 +5,7 @@ line-number = "relative"
 
 [editor.file-picker]
 hidden = false
+
+[keys.normal]
+C-b = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}"
+C-c = """:sh sh -c 'git blame -L %{cursor_line},%{cursor_line} %{buffer_name} | awk "{print \\$1}" | tr -d "\n" | pbcopy'"""
