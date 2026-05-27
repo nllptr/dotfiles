@@ -1,0 +1,241 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+Usage:
+  tmux-work-window [options] [root] [window-name]
+
+Create a new tmux work window in an existing session.
+
+Layout:
+  left:        editor pane
+  right-top:   agent pane
+  right-bottom: terminal pane
+
+Options:
+  -s, --session NAME       tmux session to use outside tmux
+  -r, --root PATH          project root; defaults to current directory
+  -n, --name NAME          window name; defaults to basename of root
+  -e, --editor-cmd CMD     command for left pane; defaults to TMUX_WORK_EDITOR_CMD or "hx ."
+  -a, --agent-cmd CMD      command for right-top pane; defaults to TMUX_WORK_AGENT_CMD
+      --terminal-cmd CMD   command for right-bottom pane; defaults to TMUX_WORK_TERMINAL_CMD
+      --no-switch          create the window but do not switch or attach to it
+  -h, --help               show this help
+
+Environment:
+  TMUX_SESSION             session to use when invoked outside tmux
+  TMUX_WORK_EDITOR_CMD     default editor command
+  TMUX_WORK_AGENT_CMD      default agent command
+  TMUX_WORK_TERMINAL_CMD   default terminal command
+EOF
+}
+
+die() {
+  printf 'tmux-work-window: %s\n' "$*" >&2
+  exit 1
+}
+
+need_arg() {
+  local option="$1"
+  local value="${2-}"
+
+  if [[ -z "$value" ]]; then
+    die "$option requires a value"
+  fi
+}
+
+root="$PWD"
+root_was_set=0
+name=""
+session="${TMUX_SESSION:-}"
+editor_cmd="${TMUX_WORK_EDITOR_CMD:-hx .}"
+agent_cmd="${TMUX_WORK_AGENT_CMD:-}"
+terminal_cmd="${TMUX_WORK_TERMINAL_CMD:-}"
+switch_to_window=1
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -s|--session)
+      need_arg "$1" "${2-}"
+      session="$2"
+      shift 2
+      ;;
+    -r|--root)
+      need_arg "$1" "${2-}"
+      root="$2"
+      root_was_set=1
+      shift 2
+      ;;
+    -n|--name)
+      need_arg "$1" "${2-}"
+      name="$2"
+      shift 2
+      ;;
+    -e|--editor-cmd)
+      need_arg "$1" "${2-}"
+      editor_cmd="$2"
+      shift 2
+      ;;
+    -a|--agent-cmd)
+      need_arg "$1" "${2-}"
+      agent_cmd="$2"
+      shift 2
+      ;;
+    --terminal-cmd)
+      need_arg "$1" "${2-}"
+      terminal_cmd="$2"
+      shift 2
+      ;;
+    --no-switch)
+      switch_to_window=0
+      shift
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    --)
+      shift
+      break
+      ;;
+    -*)
+      die "unknown option: $1"
+      ;;
+    *)
+      if [[ "$root_was_set" -eq 0 ]]; then
+        root="$1"
+        root_was_set=1
+      elif [[ -z "$name" ]]; then
+        name="$1"
+      else
+        die "too many positional arguments"
+      fi
+      shift
+      ;;
+  esac
+done
+
+if [[ $# -gt 0 ]]; then
+  die "too many positional arguments"
+fi
+
+if ! command -v tmux >/dev/null 2>&1; then
+  die "tmux is not installed or not on PATH"
+fi
+
+if [[ ! -d "$root" ]]; then
+  die "root does not exist or is not a directory: $root"
+fi
+
+root="$(cd "$root" && pwd -P)"
+
+if [[ -z "$name" ]]; then
+  name="$(basename "$root")"
+fi
+
+if [[ -z "$name" || "$name" == "/" ]]; then
+  name="work"
+fi
+
+if [[ -z "$session" && -n "${TMUX:-}" ]]; then
+  session="$(tmux display-message -p '#S')"
+fi
+
+if [[ -z "$session" ]]; then
+  sessions_output="$(tmux list-sessions -F '#S' 2>/dev/null || true)"
+  session_count=0
+  first_session=""
+
+  while IFS= read -r candidate; do
+    [[ -z "$candidate" ]] && continue
+    session_count=$((session_count + 1))
+
+    if [[ -z "$first_session" ]]; then
+      first_session="$candidate"
+    fi
+  done <<< "$sessions_output"
+
+  if [[ "$session_count" -eq 0 ]]; then
+    die "no tmux sessions exist"
+  elif [[ "$session_count" -eq 1 ]]; then
+    session="$first_session"
+  else
+    printf 'tmux-work-window: multiple tmux sessions exist; choose one with -s or TMUX_SESSION\n' >&2
+    printf '%s\n' "$sessions_output" >&2
+    exit 1
+  fi
+fi
+
+if ! tmux has-session -t "$session" 2>/dev/null; then
+  die "tmux session does not exist: $session"
+fi
+
+run_in_pane() {
+  local pane="$1"
+  local command="$2"
+
+  if [[ -z "$command" ]]; then
+    return 0
+  fi
+
+  tmux send-keys -t "$pane" -l "$command"
+  tmux send-keys -t "$pane" C-m
+}
+
+read -r window left_pane < <(
+  tmux new-window \
+    -d \
+    -P \
+    -F '#{window_id} #{pane_id}' \
+    -t "${session}:" \
+    -n "$name" \
+    -c "$root"
+)
+
+right_top_pane="$(
+  tmux split-window \
+    -h \
+    -d \
+    -p 50 \
+    -P \
+    -F '#{pane_id}' \
+    -t "$left_pane" \
+    -c "$root"
+)"
+
+right_bottom_pane="$(
+  tmux split-window \
+    -v \
+    -d \
+    -p 50 \
+    -P \
+    -F '#{pane_id}' \
+    -t "$right_top_pane" \
+    -c "$root"
+)"
+
+# Some themes render #T, the active pane title, instead of #W, the window name.
+tmux select-pane -t "$left_pane" -T "$name"
+tmux select-pane -t "$right_top_pane" -T "$name"
+tmux select-pane -t "$right_bottom_pane" -T "$name"
+
+run_in_pane "$left_pane" "$editor_cmd"
+run_in_pane "$right_top_pane" "$agent_cmd"
+run_in_pane "$right_bottom_pane" "$terminal_cmd"
+
+tmux select-pane -t "$left_pane"
+
+if [[ "$switch_to_window" -eq 1 ]]; then
+  if [[ -n "${TMUX:-}" ]]; then
+    tmux switch-client -t "$window"
+    exit 0
+  elif [[ -t 0 && -t 1 ]]; then
+    tmux select-window -t "$window"
+    exec tmux attach-session -t "$session"
+  else
+    tmux select-window -t "$window"
+  fi
+fi
+
+printf '%s\n' "$window"

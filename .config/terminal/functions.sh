@@ -29,3 +29,6 @@ help_fzf() {
   "
 }
 
+tmux_work_window() {
+  "$HOME/.config/terminal/tmux-work-window" "$@"
+}
