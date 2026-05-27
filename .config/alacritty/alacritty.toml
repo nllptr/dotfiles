@@ -18,7 +18,27 @@ size = 14
 [font.normal]
 family = "FiraMono Nerd Font"
 
-# [general]
-# import = [
-#   "~/.config/alacritty/catppuccin-mocha.toml"
-# ]
+[general]
+import = [
+  "~/.config/alacritty/ayu_dark.toml"
+]
+
+[[keyboard.bindings]]
+key = "1"
+mods = "Command"
+action = "ReceiveChar"
+
+[[keyboard.bindings]]
+key = "2"
+mods = "Command"
+action = "ReceiveChar"
+
+[[keyboard.bindings]]
+key = "3"
+mods = "Command"
+action = "ReceiveChar"
+
+[[keyboard.bindings]]
+key = "4"
+mods = "Command"
+action = "ReceiveChar"
