@@ -17,6 +17,7 @@ export JDTLS_JVM_ARGS="-javaagent:$HOME/Jars/lombok.jar"
 
 export DOTFILES_REPO_DIR=~/dotfiles
 export NOTES_DIR=$HOME/Documents/notes
+export EDITOR=hx
 
 source ~/.config/terminal/aliases.sh
 source ~/.config/terminal/functions.sh
@@ -34,3 +35,5 @@ export PATH="$PATH:/Users/simonwessel/.local/bin"
 
 eval "$(direnv hook zsh)"
 
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
