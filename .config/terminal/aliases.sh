@@ -19,6 +19,7 @@ alias gst="git status"
 alias glg="git log"
 alias gco="git checkout"
 alias ggraph="git log --all --decorate --oneline --graph"
+alias gg="git-graph --model simple --style round"
 
 # Completions (use these aliases to activate completions)
 alias init-nerdctl="source <(nerdctl completion bash)"

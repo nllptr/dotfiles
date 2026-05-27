@@ -12,13 +12,18 @@ layout {
 		pane name="btm" borderless=true command="btm"
 	}
 	tab name="notes" cwd="~/notes" {
-		pane split_direction="Vertical" {
+		pane split_direction="vertical" {
 			pane size="15%" {
 				plugin location="zellij:strider"
 			}
 		}
 	}
 	tab name="code" cwd="~/code" {
-		pane
+		pane split_direction="vertical" {
+			pane
+			pane stacked=true {
+				pane
+			}
+		}
 	}
 }
