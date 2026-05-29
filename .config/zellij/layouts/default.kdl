@@ -19,10 +19,20 @@ layout {
 		}
 	}
 	tab name="code" cwd="~/code" {
-		pane split_direction="vertical" {
-			pane
-			pane stacked=true {
-				pane
+		pane size="15%" {
+			plugin location="zellij:strider"
+		}
+	}
+	swap_tiled_layout name="strider_split" {
+		tab max_panes=1 {
+			pane size="15%" { plugin location="zellij:strider"; }
+		}
+		tab {
+			pane split_direction="vertical" {
+				pane size="15%" { plugin location="zellij:strider"; }
+				pane {
+					children
+				}
 			}
 		}
 	}
