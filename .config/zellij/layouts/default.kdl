@@ -8,32 +8,38 @@ layout {
 			plugin location="zellij:status-bar"
 		}
 	}
+
+	tab_template name="strider_tab" {
+		pane size=1 borderless=true {
+			plugin location="zellij:tab-bar"
+		}
+		pane {
+			plugin location="zellij:strider"
+		}
+		pane size=2 borderless=true {
+			plugin location="zellij:status-bar"
+		}
+	}
+
+	swap_tiled_layout name="strider_split" {
+
+		tab exact_panes=3 {
+			pane { plugin location="zellij:strider"; }
+		}
+
+		tab min_panes=4 {
+			pane split_direction="vertical" {
+				pane size="15%" { plugin location="zellij:strider"; }
+				pane
+			}
+		}
+	}
+
 	tab name="system" {
 		pane name="btm" borderless=true command="btm"
 	}
-	tab name="notes" cwd="~/notes" {
-		pane split_direction="vertical" {
-			pane size="15%" {
-				plugin location="zellij:strider"
-			}
-		}
-	}
-	tab name="code" cwd="~/code" {
-		pane size="15%" {
-			plugin location="zellij:strider"
-		}
-	}
-	swap_tiled_layout name="strider_split" {
-		tab max_panes=1 {
-			pane size="15%" { plugin location="zellij:strider"; }
-		}
-		tab {
-			pane split_direction="vertical" {
-				pane size="15%" { plugin location="zellij:strider"; }
-				pane {
-					children
-				}
-			}
-		}
-	}
+	strider_tab name="notes" cwd="~/notes"
+
+	strider_tab name="code" cwd="~/code"
+
 }
