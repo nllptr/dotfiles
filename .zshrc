@@ -1,5 +1,4 @@
 eval "$(starship init zsh)"
-eval "$(fnm env --use-on-cd)"
 
 fpath=(~/.config/terminal/zsh $fpath)
 
@@ -9,6 +8,10 @@ zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 zstyle ':completion:*:*:git:*' script ~/.config/terminal/git-completion.bash
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Subject to change in on other machines
 export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/Applications/IntelliJ\ IDEA.app/Contents/MacOS:$PATH
@@ -39,3 +42,4 @@ export PATH="$PATH:/Users/simonwessel/.local/bin"
 eval "$(direnv hook zsh)"
 
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
